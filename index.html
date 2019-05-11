@@ -14,7 +14,7 @@
     <div class="herobg"></div>
     <nav>
         <div class="flex">
-        <div class="logo">Larv</div>
+        <div class="logo">sr</div>
         <div class="menu">
                <a href="#" class="ham"> <i class="fas fa-bars"></i></a>
                <a href="" class="navx"><i class="fas fa-times"></i></a>
@@ -30,7 +30,7 @@
 
     <header>
         <section>
-            <h2>Life @ Sunrise Riverside</h2>
+            <h2>Life <span class="acc">@</span> Sunrise Riverside</h2>
             <p>Information about living at Sunrise Riversid, District 7, HCMC, Vietnam</p>
             <div class="apartment">
                 <img src="/IMG/apartment2.svg" alt="Cartoon style drawing of an apartment building from the outside with some trees around it">
@@ -43,9 +43,85 @@
     
 
     <main>
+        <section class="location">
+            <aside class="where">
+                <div class="wherebg"></div>
+                <span class="icon"></span>
+                <h3>Location <i class="fas fa-map-marker-alt"></i></h3>
+                
+                <p> It is located in District 7, which has been growing very rapidly. Many people choose to live here instead of District 1 due to the cheaper housing costs. The roads here are bigger, there is less traffic, and overall much more peace and quite. It's a good balance between living in District 1 and living on the outskirts.</p>
+                
+            </aside>
+            <div class="map" id="map"></div>
+
+            <aside class="neighborhood">
+                <h3>The Neighborhood <i class="fas fa-home"></i></h3>
+                <p>The street is technically a dead end, it ends up against the river. It is, however, a large area with a few other smaller upperclass housing devolopments. The area is extremely safe, I have not met a single person who has had any kind of problem.</p>
+            </aside>
+
+            <aside class="commute">
+                <h3>Commute <i class="fas fa-traffic-light"></i></h3>
+                <p>There are a growing number of people who live in District 7 and commute to District 1 for work. Before you commit to doing this, I recommend you drive the route from the apartment to your work during both morning and afternoon rush hour traffic. Needless to say, Vietnamese traffic is a thing to experience and not for everyone.</p>
+            </aside>
+        </section>
+
+
+        <section class="dailyLife">
+            <article>
+                <h2>Living <i class="fas fa-list-ul"></i></h2>
+                <p>Sunrise Riverside is a huge devolopment. Each building is 21 stories tall. There are currently 10 finished with five more under construction. So what is it like living there?</p>
+            </article>
+            <aside class="gym">
+                    <h3>Lift <i class="fas fa-dumbbell"></i></h3>
+                    <p>The main reason I decided to live here!
+                        The gym is awesome, all new with lots of room to expand later.
+                        Most importantly, they have a power rack. It's a quality gym.
+                        It is located on the ground floor, next to the pool. The gym hours are unknown. I've worked out as late as 11pm and been asked to leave at 9pm other times. Sometimes the front desk is manned, sometimes it is not.
+            </aside>
+
+            <aside class="swim">
+                    <h3>Swim <i class="fas fa-swimmer"></i></h3>
+                    <p>Yes, it has a pool! Located in the center of the complex, it is outdoors and sorrounded by the complex. Though it is very big, it is not deep. With a max depth of about four feet you won't be doing any diving. Right now there are only about 10 poolside lounge chairs, hopefully they will be getting more. </p>
+                </aside>
+
+                <aside class="park">
+                        <h3>Park <i class="fas fa-parking"></i></h3>
+                        <p>Parking is really easy, it has a massive underground parking lot. It has 24/7 security and you have to swipe your key card to get in. Once inside you can park close to your building and take an elevator straight up. Make sure you find out if your apartment comes with a motorbike or car parking spot, otherwise you will have to pay extra</p>
+                    </aside>
+                    <aside class="security">
+                            <h3>Security <i class="fas fa-key"></i></h3>
+                            <p>They went in heavy with this. Security is all over. There is a guard outside each building entrance. You have to swipe your key card to get into the lobby. You have to swipe your key card use the elevator to up, and you can't go to anyother floor except yours or parking. Outside in the pool area there are numerous security guards patrolling all night. Security cameras all over.</p>
+                        </aside>
+                        <aside class="internet">
+                            <h3>Download <i class="fas fa-wifi"></i></h3>
+                            <p>
+                            Saving the most important for last. Internet has been decent, running at around 35Mbps (4.4MBps) both up and down. Not the fastest but good enough for Skype video calls and Netflix. It has been reliable, only dropping about once every two weeks for a few minutes. I have a SIM card hotspot just case though.
+                            </p>
+                        </aside>
+                <aside class="problems">
+                        <h3>The Bad <i class="far fa-frown"></i></h2>
+                        <p>The number one thing you should be aware of is construction noise. Even though the buildings are totally finished from the exterior, it does not mean each apartment is ready to move in. Most are currently just bare concrete shells. When someone buys an apartment they have the interior built just how they want. So you could be living on a nice floor but the apartments around you are not finished, and if they decide to finish the interior you are going to be hearing it all day long for the next two months. There is no way of knowing when this will happen. Even if you are in one of the older buildings, remodeling is so cheap that a new owner will often have it completely redone. </p>
+                </aside>
+                        
+        </section>
+
+        
     
 
     </main>
     <script src="/JS/main.js"></script>
+    <script>
+            function initMap() {
+                let uluru = {lat: 10.723939, lng: 106.6960146};
+    
+                let map = new google.maps.Map(
+                    document.querySelector('#map'), {zoom: 15, center: uluru});
+                let marker = new google.maps.Marker({position: uluru, map: map});
+                let options = new google.maps.MapOptions({backgroundColor: '#000000'});
+            }
+        </script>
+    
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfo56YNbOeY5A_rLLPSHjNaZR_SzbdNvQ&callback=initMap">
+            </script>
 </body>
 </html>

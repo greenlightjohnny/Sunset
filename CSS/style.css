@@ -16,6 +16,7 @@ html, body {
 body {
   padding: 0;
   margin: 0;
+  background: #fefdfa;
 }
 
 .navx {
@@ -53,14 +54,14 @@ body {
           clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 75%, 0 0);
   height: 100vh;
   width: 100%;
-  background: #1Dbfca;
+  background: #17BEBB;
   position: absolute;
   z-index: -1;
 }
 
 nav {
   position: fixed;
-  background: #1Dbfca;
+  background: #17BEBB;
   top: 0;
   width: 100%;
   z-index: 2;
@@ -70,7 +71,7 @@ nav {
 }
 
 nav .menu {
-  color: #3D9970;
+  color: #17BEBB;
   font-size: 2.5rem;
 }
 
@@ -92,7 +93,7 @@ nav .logo {
   font-size: 1.8rem;
   font-family: 'cantarell';
   text-transform: uppercase;
-  color: #3D9970;
+  color: #242424;
 }
 
 nav ul {
@@ -111,8 +112,9 @@ nav a {
 }
 
 header {
-  padding-top: 4rem;
+  padding-top: 5rem;
   width: 80%;
+  height: 100vh;
   margin: 0 auto;
 }
 
@@ -143,18 +145,57 @@ header h2 {
   color: #fefdfa;
 }
 
+header h2 .acc {
+  color: #242424;
+}
+
 header p {
   text-align: center;
 }
 
-main {
-  background: #f4f4f4;
-  height: 100vh;
+/*********** Location ****************************/
+.location .where {
+  position: relative;
+}
+
+.location .where p {
+  z-index: 2;
+  opacity: 1;
+  padding-bottom: 1rem;
+}
+
+.location .wherebg {
+  background: #5ab9ea;
+  opacity: .2;
+  -webkit-clip-path: polygon(0 0, 0% 100%, 62% 100%);
+          clip-path: polygon(0 0, 0% 100%, 62% 100%);
+  z-index: -2;
   position: absolute;
-  top: 100vh;
-  right: 0;
-  left: 0;
-  width: 100%;
+  height: 100%;
+  width: 100vw;
+}
+
+.location aside {
+  background: rgba(66, 166, 121, 0.466);
+}
+
+.location aside h3 {
+  text-align: center;
+  color: #130c06;
+  font-size: 1.5rem;
+  padding-top: 1.5rem;
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+
+.location aside p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 10px 10px 30px 10px;
+}
+
+.location .map {
+  min-height: 30vh;
 }
 
 .hamOpen {
@@ -164,5 +205,48 @@ main {
 .menuOpen {
   display: block;
   z-index: 3;
+}
+
+/***************** DAILY LIFE ******************/
+.dailyLife {
+  background: -webkit-gradient(linear, left top, left bottom, from(#fffff2), to(#f9f9f9));
+  background: linear-gradient(#fffff2, #f9f9f9);
+}
+
+.dailyLife article {
+  -webkit-box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+}
+
+.dailyLife article h2 {
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 2rem;
+  color: #3b3ef8;
+}
+
+.dailyLife article p {
+  padding: 0 10px 35px 10px;
+}
+
+.dailyLife aside {
+  -webkit-box-shadow: 0 11px 28px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 11px 28px rgba(0, 0, 0, 0.3);
+}
+
+.dailyLife aside h3 {
+  text-align: center;
+  padding-top: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  color: #3b3ef8;
+}
+
+.dailyLife aside p {
+  padding: 0px 10px 10px 10px;
 }
 /*# sourceMappingURL=style.css.map */
