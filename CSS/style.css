@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Cantarell|Catamaran|Merriweather|Open+Sans|Passion+One|Source+Code+Pro");
+/*********************
+BREAKPOINTS
+*********************/
 /**pal ***/
 html, body {
   -webkit-box-sizing: border-box;
@@ -70,9 +73,29 @@ nav {
   transition: all ease 1s;
 }
 
+@media (min-width: 499px) {
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 nav .menu {
   color: #17BEBB;
   font-size: 2.5rem;
+}
+
+@media (min-width: 499px) {
+  nav .menu {
+    display: none;
+  }
 }
 
 nav .flex {
@@ -88,6 +111,15 @@ nav .flex {
   width: 100%;
 }
 
+@media (min-width: 499px) {
+  nav .flex {
+    display: inline-block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+
 nav .logo {
   font-weight: bold;
   font-size: 1.8rem;
@@ -101,9 +133,22 @@ nav ul {
   display: none;
 }
 
+@media (min-width: 499px) {
+  nav ul {
+    display: inline-block;
+    padding: 0;
+  }
+}
+
 nav li {
-  display: block;
+  display: inline-block;
   margin: 0 auto;
+}
+
+@media (min-width: 499px) {
+  nav li {
+    margin-left: 1rem;
+  }
 }
 
 nav a {
@@ -118,6 +163,30 @@ header {
   margin: 0 auto;
 }
 
+@media (min-width: 1020px) {
+  header .apartment {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+header .apartment .hidem {
+  display: none;
+}
+
+@media (min-width: 1020px) {
+  header .apartment .hidem {
+    display: inline-block;
+  }
+}
+
 header img {
   display: block;
   margin: 0 auto;
@@ -125,6 +194,13 @@ header img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media (min-width: 1020px) {
+  header img {
+    display: inline-block;
+    width: 30%;
+  }
 }
 
 header .standout {
@@ -136,6 +212,13 @@ header .standout {
           box-shadow: 0 11px 28px rgba(0, 0, 0, 0.3);
 }
 
+@media (min-width: 499px) {
+  header .standout {
+    width: 50%;
+    margin: 5% auto 0 auto;
+  }
+}
+
 header .standout p {
   margin: 0;
 }
@@ -143,6 +226,13 @@ header .standout p {
 header h2 {
   text-align: center;
   color: #fefdfa;
+}
+
+@media (min-width: 499px) {
+  header h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
 }
 
 header h2 .acc {
@@ -154,8 +244,47 @@ header p {
 }
 
 /*********** Location ****************************/
+@media (min-width: 847px) {
+  .location .flex2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 847px) {
+  .location .flex2 aside {
+    width: 40%;
+    margin: 2rem auto 2rem auto;
+    border-radius: 10px;
+    background: #fefdfa;
+    -webkit-box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+  }
+}
+
 .location .where {
   position: relative;
+  background: transparent;
+}
+
+@media (min-width: 847px) {
+  .location .where {
+    width: 60%;
+    border-radius: 10px;
+    background: #fefdfa;
+    margin: 4rem auto 2rem auto;
+    -webkit-box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+  }
 }
 
 .location .where p {
@@ -166,7 +295,7 @@ header p {
 
 .location .wherebg {
   background: #5ab9ea;
-  opacity: .2;
+  opacity: .4;
   -webkit-clip-path: polygon(0 0, 0% 100%, 62% 100%);
           clip-path: polygon(0 0, 0% 100%, 62% 100%);
   z-index: -2;
@@ -175,8 +304,15 @@ header p {
   width: 100vw;
 }
 
+@media (min-width: 847px) {
+  .location .wherebg {
+    display: none;
+  }
+}
+
 .location aside {
-  background: rgba(66, 166, 121, 0.466);
+  /* background: rgba(66, 166, 121, 0.466); */
+  background: #5abaea69;
 }
 
 .location aside h3 {
@@ -198,6 +334,12 @@ header p {
   min-height: 30vh;
 }
 
+@media (min-width: 499px) {
+  .location .map {
+    height: 40vh;
+  }
+}
+
 .hamOpen {
   display: none;
 }
@@ -209,8 +351,9 @@ header p {
 
 /***************** DAILY LIFE ******************/
 .dailyLife {
-  background: -webkit-gradient(linear, left top, left bottom, from(#fffff2), to(#f9f9f9));
-  background: linear-gradient(#fffff2, #f9f9f9);
+  background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#f2f2f2));
+  background: linear-gradient(#f9f9f9, #f2f2f2);
+  margin-top: 3rem;
 }
 
 .dailyLife article {
@@ -221,20 +364,61 @@ header p {
 .dailyLife article h2 {
   text-align: center;
   text-transform: uppercase;
-  padding-top: 2rem;
+  padding-top: 3rem;
   margin-top: 0;
   margin-bottom: 0;
+  padding-bottom: 1rem;
   font-size: 2rem;
-  color: #3b3ef8;
+  color: #102438;
 }
 
 .dailyLife article p {
   padding: 0 10px 35px 10px;
 }
 
+@media (min-width: 847px) {
+  .dailyLife article {
+    width: 100%;
+    margin: 0 auto;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .dailyLife article p {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 847px) {
+  .dailyLife article div {
+    background: blue;
+  }
+}
+
+@media (min-width: 847px) {
+  .dailyLife .flex3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
 .dailyLife aside {
   -webkit-box-shadow: 0 11px 28px rgba(0, 0, 0, 0.3);
           box-shadow: 0 11px 28px rgba(0, 0, 0, 0.3);
+  margin: 2rem auto 2rem auto;
+  border-radius: 10px;
+  background: #fefdfa;
 }
 
 .dailyLife aside h3 {
@@ -248,5 +432,18 @@ header p {
 
 .dailyLife aside p {
   padding: 0px 10px 10px 10px;
+}
+
+@media (min-width: 847px) {
+  .dailyLife aside {
+    width: 40%;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: 1020px) {
+  .dailyLife aside {
+    width: 32%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

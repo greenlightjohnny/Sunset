@@ -1,5 +1,47 @@
 @import url('https://fonts.googleapis.com/css?family=Cantarell|Catamaran|Merriweather|Open+Sans|Passion+One|Source+Code+Pro');
 
+/*********************
+BREAKPOINTS
+*********************/
+@mixin breakpoint($point) {
+    @if $point == tablet {
+        @media (min-width: 499px) {
+            @content;
+        }
+    }
+
+
+
+    @else if $point == tablet2 {
+        @media (min-width: 847px) {
+            @content;
+        }
+    }
+
+
+
+    @else if $point == desktop {
+        @media (min-width: 1020px) {
+            @content;
+        }
+    }
+
+
+
+    @else if $point == full {
+        @media (min-width: 1300px) {
+            @content;
+        }
+    }
+
+
+
+    @else if $point == tablet {
+        @media (min-width: 499px) {
+            @content;
+        }
+    }
+}
 
 $herob: #17BEBB;
 
@@ -21,6 +63,9 @@ $pinkish: #D83f87;
 $purplish: #42A679;
 
 $blue1: #5ab9ea;
+
+
+$desktoppadding: 15px;
 
 
 
@@ -82,9 +127,19 @@ nav {
     padding: 1rem 10% 1rem 10%;
     transition: all ease 1s;
 
+    @include breakpoint(tablet) {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+    }
+
     .menu {
         color: $herob;
         font-size: 2.5rem;
+        @include breakpoint(tablet) {
+            display: none;
+        }
+
         
     }
 
@@ -93,6 +148,11 @@ nav {
         justify-content: space-between;
         align-items: center;
         width: 100%;
+
+        @include breakpoint(tablet) {
+            display: inline-block;
+            width: fit-content;
+        }
     }
 
     .logo {
@@ -107,11 +167,22 @@ nav {
         list-style-type: none;
         display: none;
 
+        @include breakpoint(tablet) {
+            display: inline-block;
+            padding: 0;
+            
+        
+        }
+
     }
 
     li {
-        display: block;
+        display: inline-block;
         margin: 0 auto;
+
+        @include breakpoint(tablet) {
+            margin-left: 1rem;
+        }
     }
 
     a {
@@ -127,12 +198,38 @@ header {
     height: 100vh;
     margin: 0 auto;
 
+    .apartment {
+
+
+        @include breakpoint(desktop) {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+
+            
+        }
+        .hidem {
+            display: none;
+
+            @include breakpoint(desktop) {
+                display: inline-block;
+            }
+            
+            
+        }
+    }
+
     img {
         display: block;
         margin: 0 auto;
         width: 50%;
         height: 100%;
         object-fit: cover;
+
+        @include breakpoint(desktop) {
+            display: inline-block;
+            width: 30%;
+        }
     }
 
     .standout {
@@ -142,6 +239,11 @@ header {
         margin-top: 10%;
         box-shadow: 0 11px 28px rgba(0, 0, 0, .3);
 
+        @include breakpoint(tablet) {
+            width: 50%;
+            margin: 5% auto 0 auto;
+        }
+
         p {
             margin: 0;
         }
@@ -150,6 +252,11 @@ header {
     h2 {
         text-align: center;
         color: $white;
+
+        @include breakpoint(tablet) {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
         .acc {
             color: $offblack;
         }
@@ -173,10 +280,42 @@ main {
 
 .location {
     
+    .flex2 {
+
+        @include breakpoint(tablet2) {
+            display: flex;
+            flex: 1;
+            justify-content: space-evenly;
+            width: 90%;
+            margin: 0 auto;
+
+            
+        }
+        aside {
+            @include breakpoint(tablet2) {
+                width: 40%;
+                margin: 2rem auto 2rem auto;
+                border-radius: 10px;
+                background: $white;
+                box-shadow: 0 10px 28px rgba(0, 0, 0, .3);
+
+            }
+        }
+    }
 
     .where {
         position: relative;
+        background: transparent;
 
+        @include breakpoint(tablet2) {
+            width: 60%;
+            border-radius: 10px;
+            background: $white;
+            margin: 4rem auto 2rem auto;
+            
+            box-shadow: 0 10px 28px rgba(0, 0, 0, .3);
+
+        }
         
         p {
             
@@ -192,17 +331,24 @@ main {
 
     .wherebg {
         background: $blue1;
-        opacity: .2;
+        opacity: .4;
         clip-path: polygon(0 0, 0% 100%, 62% 100%);
         z-index: -2;
         position: absolute;
         height: 100%;
         width: 100vw;
 
+        @include breakpoint(tablet2) {
+            display: none;
+        }
+
     }
     aside {
         
-        background: rgba(66, 166, 121, 0.466);
+        /* background: rgba(66, 166, 121, 0.466); */
+        background: #5abaea69;
+
+        
         
         h3 {
             text-align: center;
@@ -221,6 +367,10 @@ main {
 
     .map {
         min-height: 30vh;
+
+        @include breakpoint(tablet) {
+            height: 40vh;
+        }
     }
 }
 
@@ -240,7 +390,8 @@ main {
 
 .dailyLife {
 
-    background: linear-gradient(#fffff2, #f9f9f9);
+    background: linear-gradient(#f9f9f9, #f2f2f2);
+    margin-top: 3rem;
     article {
         
         box-shadow: 0 10px 28px rgba(0, 0, 0, .3);
@@ -248,22 +399,59 @@ main {
         h2 {
             text-align: center;
             text-transform: uppercase;
-            padding-top: 2rem;
+            padding-top: 3rem;
             margin-top: 0;
             margin-bottom: 0;
+            padding-bottom: 1rem;
             font-size: 2rem;
-            color: $purple;
+            color: $dark;
         }
 
         p {
             padding: 0 10px 35px 10px;
+
         }
+
+        @include breakpoint(tablet2) {
+            width: 100%;
+            margin: 0 auto;
+            box-shadow: none;
+            
+            p {
+                width: 60%;
+                margin: 0 auto;
+            }
+        }
+
+        div {
+
+            @include breakpoint(tablet2) {
+                background: blue;
+                
+            }
+        }
+    }
+
+    .flex3 {
+        
+        @include breakpoint(tablet2) {
+            display: flex;
+            flex: 1;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            width: 90%;
+            margin: 0 auto;
+        }
+
     }
 
     aside {
         
         
         box-shadow: 0 11px 28px rgba(0, 0, 0, .3);
+        margin: 2rem auto 2rem auto;
+        border-radius: 10px;
+        background: $white;
 
         h3 {
             text-align: center;
@@ -276,6 +464,16 @@ main {
 
         p {
             padding: 0px 10px 10px 10px;
+        }
+
+
+        @include breakpoint(tablet2) {
+            width: 40%;
+            margin-bottom: 2rem;
+        }
+
+        @include breakpoint(desktop) {
+            width: 32%;
         }
     }
 }
