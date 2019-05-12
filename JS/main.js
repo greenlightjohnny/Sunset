@@ -15,11 +15,27 @@ let nav = document.querySelector('.menu');
 
 function toggleNav() {
    let ul = document.querySelector('ul');
+   
    let navx = document.querySelector('.navx');
-   let ham = document.querySelector('.ham')
-   ham.classList.toggle('hamOpen') ;
+   let ham = document.querySelector('.ham');
+   ham.classList.toggle('hamOpen');
    navx.classList.toggle('menuOpen');
-    ul.classList.toggle('mobileMenu');
-}
+   ul.classList.toggle('mobileMenu');
+    }
 
 nav.addEventListener('click', toggleNav);
+
+let li = document.querySelectorAll('li');
+
+function closeNav() {
+    let ul = document.querySelector('ul');
+    let navx = document.querySelector('.navx');
+    let ham = document.querySelector('.ham');
+    
+    ham.classList.toggle('hamOpen');
+    navx.classList.toggle('menuOpen');
+    ul.classList.remove('mobileMenu');
+    
+}
+
+li.forEach(i => i.addEventListener('click', closeNav))

@@ -57,14 +57,15 @@ body {
           clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 75%, 0 0);
   height: 100vh;
   width: 100%;
-  background: #17BEBB;
+  background: #376dd1;
   position: absolute;
   z-index: -1;
 }
 
 nav {
-  position: fixed;
-  background: #17BEBB;
+  position: -webkit-sticky;
+  position: sticky;
+  background: #376dd1;
   top: 0;
   width: 100%;
   z-index: 2;
@@ -73,7 +74,7 @@ nav {
   transition: all ease 1s;
 }
 
-@media (min-width: 499px) {
+@media (min-width: 847px) {
   nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -88,11 +89,11 @@ nav {
 }
 
 nav .menu {
-  color: #17BEBB;
+  color: #376dd1;
   font-size: 2.5rem;
 }
 
-@media (min-width: 499px) {
+@media (min-width: 847px) {
   nav .menu {
     display: none;
   }
@@ -111,7 +112,7 @@ nav .flex {
   width: 100%;
 }
 
-@media (min-width: 499px) {
+@media (min-width: 847px) {
   nav .flex {
     display: inline-block;
     width: -webkit-fit-content;
@@ -125,7 +126,7 @@ nav .logo {
   font-size: 1.8rem;
   font-family: 'cantarell';
   text-transform: uppercase;
-  color: #242424;
+  color: #eeea0e;
 }
 
 nav ul {
@@ -133,7 +134,7 @@ nav ul {
   display: none;
 }
 
-@media (min-width: 499px) {
+@media (min-width: 847px) {
   nav ul {
     display: inline-block;
     padding: 0;
@@ -145,7 +146,7 @@ nav li {
   margin: 0 auto;
 }
 
-@media (min-width: 499px) {
+@media (min-width: 847px) {
   nav li {
     margin-left: 1rem;
   }
@@ -153,13 +154,13 @@ nav li {
 
 nav a {
   text-decoration: none;
-  color: #f4f4f4;
+  color: #fefdfa;
 }
 
 header {
-  padding-top: 5rem;
+  padding-top: 0;
   width: 80%;
-  height: 100vh;
+  height: 90vh;
   margin: 0 auto;
 }
 
@@ -235,12 +236,25 @@ header h2 {
   }
 }
 
+@media (min-width: 1300px) {
+  header h2 {
+    font-size: 3rem;
+  }
+}
+
 header h2 .acc {
-  color: #242424;
+  color: #eeea0e;
 }
 
 header p {
   text-align: center;
+}
+
+.anchor {
+  display: block;
+  visibility: hidden;
+  position: relative;
+  top: -90px;
 }
 
 /*********** Location ****************************/
@@ -276,67 +290,71 @@ header p {
   background: transparent;
 }
 
+.location .where h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
 @media (min-width: 847px) {
   .location .where {
     width: 60%;
     border-radius: 10px;
     background: #fefdfa;
     margin: 4rem auto 2rem auto;
-    -webkit-box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
-            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
   }
 }
 
 .location .where p {
-  z-index: 2;
   opacity: 1;
-  padding-bottom: 1rem;
+  padding: 15px;
 }
 
-.location .wherebg {
-  background: #5ab9ea;
-  opacity: .4;
-  -webkit-clip-path: polygon(0 0, 0% 100%, 62% 100%);
-          clip-path: polygon(0 0, 0% 100%, 62% 100%);
-  z-index: -2;
-  position: absolute;
-  height: 100%;
-  width: 100vw;
+aside {
+  /* background: rgba(66, 166, 121, 0.466); */
+  background: #fefdfa;
+  -webkit-box-shadow: 0 11px 28px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 11px 28px rgba(0, 0, 0, 0.3);
+  margin: 2rem auto 2rem auto;
+  border-radius: 10px;
+  background: #fefdfa;
 }
 
-@media (min-width: 847px) {
-  .location .wherebg {
-    display: none;
+@media (min-width: 499px) {
+  aside {
+    width: 80%;
   }
 }
 
-.location aside {
-  /* background: rgba(66, 166, 121, 0.466); */
-  background: #5abaea69;
-}
-
-.location aside h3 {
+aside h3 {
   text-align: center;
-  color: #130c06;
+  color: #D55534;
   font-size: 1.5rem;
   padding-top: 1.5rem;
   margin-top: 0;
   margin-bottom: .5rem;
 }
 
-.location aside p {
+aside p {
   margin-top: 0;
   margin-bottom: 0;
   padding: 10px 10px 30px 10px;
 }
 
-.location .map {
+.map {
   min-height: 30vh;
 }
 
 @media (min-width: 499px) {
-  .location .map {
+  .map {
     height: 40vh;
+  }
+}
+
+@media (min-width: 1300px) {
+  .map {
+    width: 80%;
+    height: 50vh;
+    margin: 0 auto;
   }
 }
 
