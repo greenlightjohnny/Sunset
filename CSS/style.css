@@ -350,7 +350,7 @@ aside p {
   }
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1800px) {
   .map {
     width: 80%;
     height: 50vh;
@@ -372,11 +372,6 @@ aside p {
   background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#f2f2f2));
   background: linear-gradient(#f9f9f9, #f2f2f2);
   margin-top: 3rem;
-}
-
-.dailyLife article {
-  -webkit-box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
 }
 
 .dailyLife article h2 {
@@ -463,5 +458,36 @@ aside p {
   .dailyLife aside {
     width: 32%;
   }
+}
+
+/********************* PHOTOS *****************************/
+.photos {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.photos .cssbox {
+  display: none;
+}
+
+.photos .hidefull {
+  height: 40vh;
+  width: 100%;
+  background-image: url(/IMG/image.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.photos .hidefull h3 {
+  color: #fefdfa;
+  font-size: 2rem;
+  padding-top: 30%;
+}
+
+.photos h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding-top: 3rem;
 }
 /*# sourceMappingURL=style.css.map */

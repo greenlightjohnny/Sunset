@@ -2,14 +2,20 @@
 
 function headerShadow() {
     let header = document.querySelector('nav');
-    if(window.scrollY > 0) {
+    console.log(window.scrollY)
+    if(window.scrollY >= 5) {
         header.classList.add('shadow')
     } else {
         header.classList.remove('shadow');
     }
 }
 
-window.addEventListener('scroll', headerShadow);
+function removeShadow() {
+    let header = document.querySelector('nav');
+    
+}
+
+window.addEventListener('scroll', debounce(headerShadow));
 
 let nav = document.querySelector('.menu');
 
@@ -39,3 +45,21 @@ function closeNav() {
 }
 
 li.forEach(i => i.addEventListener('click', closeNav))
+
+// Debounce function,not my code, copied from javascript30.com //
+    function debounce(func, wait = 50, immediate = true) {
+      let timeout;
+      return function() {
+        let context = this, args = arguments;
+        let later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        let callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    }
+
+  
