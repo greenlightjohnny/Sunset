@@ -292,7 +292,11 @@ header p {
 
 .location .where h2 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  padding-bottom: 2rem;
+  padding-top: 3rem;
+  text-transform: uppercase;
+  margin: 0 auto;
 }
 
 @media (min-width: 847px) {
@@ -300,13 +304,13 @@ header p {
     width: 60%;
     border-radius: 10px;
     background: #fefdfa;
-    margin: 4rem auto 2rem auto;
+    margin: 0 auto;
   }
 }
 
 .location .where p {
-  opacity: 1;
-  padding: 15px;
+  padding: 0 10px 35px 10px;
+  margin: 0 auto;
 }
 
 aside {
@@ -376,17 +380,16 @@ aside p {
 
 .dailyLife article h2 {
   text-align: center;
-  text-transform: uppercase;
+  font-size: 2.5rem;
+  padding-bottom: 2rem;
   padding-top: 3rem;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-bottom: 1rem;
-  font-size: 2rem;
-  color: #102438;
+  text-transform: uppercase;
+  margin: 0 auto;
 }
 
 .dailyLife article p {
   padding: 0 10px 35px 10px;
+  margin: 0 auto;
 }
 
 @media (min-width: 847px) {
@@ -466,10 +469,6 @@ aside p {
   text-align: center;
 }
 
-.photos .cssbox {
-  display: none;
-}
-
 .photos .hidefull {
   height: 40vh;
   width: 100%;
@@ -479,15 +478,153 @@ aside p {
   background-size: cover;
 }
 
+@media (min-width: 499px) {
+  .photos .hidefull {
+    display: none;
+  }
+}
+
+.photos .hidefull a {
+  text-decoration: none;
+  color: #fefdfa;
+}
+
 .photos .hidefull h3 {
   color: #fefdfa;
   font-size: 2rem;
-  padding-top: 30%;
+  position: relative;
+  top: 50%;
+  bottom: 50%;
 }
 
 .photos h2 {
-  font-size: 2rem;
-  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.5rem;
+  padding-bottom: 2rem;
   padding-top: 3rem;
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+
+/************ CSS BOX ****************************/
+/* The work below, CSSBox, is released under the Creative Commons
+   Attribution-ShareAlike 4.0 license and is available on
+   https://github.com/TheLastProject/CSSBox. You are not required to add
+   additional credit to your website, just leave the above text in this file */
+#photos > div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 200px;
+          flex: 1 1 200px;
+}
+
+#photos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.cssbox_thumb {
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+span.cssbox_full {
+  z-index: 999;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+}
+
+span.cssbox_full img {
+  position: fixed;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  max-height: 90%;
+  max-width: 90%;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0 0 20px black;
+          box-shadow: 0 0 20px black;
+}
+
+a.cssbox_close,
+a.cssbox_prev,
+a.cssbox_next {
+  z-index: 999;
+  position: fixed;
+  text-decoration: none;
+  visibility: hidden;
+  color: white;
+  font-size: 36px;
+}
+
+a.cssbox_close {
+  top: 1%;
+  right: 1%;
+}
+
+a.cssbox_close::after {
+  content: '\00d7';
+}
+
+a.cssbox_prev,
+a.cssbox_next {
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+}
+
+a.cssbox_prev {
+  left: 5%;
+}
+
+a.cssbox_next {
+  right: 5%;
+}
+
+a:target ~ a.cssbox_close,
+a:target ~ a.cssbox_prev,
+a:target ~ a.cssbox_next {
+  visibility: visible;
+}
+
+a:target > img.cssbox_thumb + span.cssbox_full {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: initial;
+}
+
+span.cssbox_full {
+  cursor: initial;
+}
+
+/* This is the end of CSSBox */
+/***************** PRICES ********************/
+.price h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  padding-bottom: 2rem;
+  padding-top: 3rem;
+  text-transform: uppercase;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=style.css.map */
