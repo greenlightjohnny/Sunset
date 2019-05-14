@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Cantarell|Catamaran|Merriweather|Open+Sans|Passion+One|Source+Code+Pro');
+@import url('https://fonts.googleapis.com/css?family=Allerta+Stencil|Cantarell|Catamaran|Fredoka+One|Merriweather|Open+Sans|Passion+One|Raleway|Source+Code+Pro');
+
 
 
 @mixin sectiontitle {
@@ -8,6 +9,8 @@
     padding-top: 3rem;
     text-transform: uppercase;
     margin: 0 auto;
+    font-family: 'allerta stencil';
+    font-weight: 800;
 }
 
 @mixin card {
@@ -34,6 +37,8 @@
     padding: 0 10px 35px 10px;
     margin: 0 auto;
 }
+
+
 /*********************
 BREAKPOINTS
 *********************/
@@ -77,18 +82,25 @@ BREAKPOINTS
     }
 }
 
-$herob: #376dd1;
+$herob: #423aaf;
+$herol: #def2f1;
+$herod: #2b7a78;
+
+$sun: rgb(211, 233, 14);
+
+$herom: #7ef1ec;
 
 $offwhite: #f4f4f4;
 $offblack: #242424;
 $white2: #fdfdfd;
 /**pal ***/
+$blueish: #10a5d3;
 $red: #3DBDCC;
 $white: #fefdfa;
 $lightblue: #a9c5cc;
 $darkblue: #2b4f69;
 $dark: #102438;
-$purple: rgb(59, 62, 248);
+$purple: rgb(16, 165, 211);
 $red2: #D55534;
 
 $darkpurple: #44318d;
@@ -97,7 +109,7 @@ $pinkish: #D83f87;
 $purplish: #42A679;
 
 $blue1: #5ab9ea;
-$redish: #eeea0e;
+$redish: #ef6438;
 
 
 $desktoppadding: 15px;
@@ -147,14 +159,18 @@ body {
     clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 75%, 0 0); 
     height: 100vh;
     width: 100%;
-    background: $herob;
+    background: $blue1;
+    
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     position: absolute;
     z-index: -1;
 }
 
 nav {
     position: sticky;
-    background: $herob;
+    background: $blue1;
     top: 0;
     width: 100%;
     
@@ -257,10 +273,11 @@ header {
 
     img {
         display: block;
-        margin: 0 auto;
+        margin: auto auto 0 auto;
         width: 50%;
         height: 100%;
         object-fit: cover;
+        opacity: 0.4;
 
         @include breakpoint(desktop) {
             display: inline-block;
@@ -282,12 +299,17 @@ header {
 
         p {
             margin: 0;
+
         }
     }
     
     h2 {
         text-align: center;
         color: $white;
+        letter-spacing: .2rem;
+        text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
 
         @include breakpoint(tablet) {
             font-size: 2rem;
@@ -304,6 +326,7 @@ header {
 
     p {
         text-align: center;
+        font-weight: bold;
     }
 }
 
@@ -397,10 +420,10 @@ header {
             font-size: 1.5rem;
             padding-top: 1.5rem;
             margin-top: 0;
-            margin-bottom: .5rem;
+            margin-bottom: 0;
 
-            .fas {
-                color: $redish;
+            .fas, .far {
+                color: $blueish;
             }
         }
         p {
@@ -455,6 +478,9 @@ header {
         
 
         h2 {
+            .fas {
+                color: $purple;
+            }
             @include sectiontitle;
         }
 
@@ -510,11 +536,11 @@ header {
             margin-top: 0;
             margin-bottom: 0;
             font-size: 1.5rem;
-            color: $purple;
+            color: $offblack;
         }
 
         p {
-            padding: 0px 10px 10px 10px;
+            padding: 10px 10px 10px 10px;
         }
 
 
@@ -536,7 +562,7 @@ header {
     margin: 0 auto;
     text-align: center;
     background: $white2;
-    padding-bottom: 3rem;
+    padding-bottom: 5rem;
 
     
 
@@ -572,6 +598,10 @@ header {
     }
 
     h2 {
+
+        .fas {
+            color: $herom;
+        }
         @include sectiontitle;
     }
 }
@@ -590,7 +620,7 @@ header {
 
   .photos2 {
     display: none;
-    
+    margin-top: 2rem;
     flex: 1;
     flex-wrap: wrap;
 
@@ -699,6 +729,16 @@ header {
 
 .price {
     background: $offwhite;
+    padding-bottom: 5rem;
+    .header {
+        p {
+            text-align: center;
+            padding-bottom: 3rem;
+            font-weight: bold;
+            margin-top: -1.4rem;
+
+        }
+    }
 
     .flex2 {
 
@@ -711,8 +751,10 @@ header {
         @include breakpoint(tablet) {
             width: 80%;
             
+            
             article {
-                width: 40%;
+                
+                
             }
             
         }
@@ -723,14 +765,24 @@ header {
             flex: 1;
             margin: 0 auto;
 
+            article {
+                margin: auto 2rem auto 2rem;
+            }
+
         }
     }
 
     h2 {
+        .fas, .fa, .far {
+            color: $purplish;
+        }
         @include sectiontitle;
     }
 
     h3 {
+        .fas, .fa, .far {
+            color: $purplish;
+        }
         @include cardHeader;
     }
 
@@ -739,4 +791,106 @@ header {
     }
 }
 
+/************************ CONTACTS *////////////////////////
 
+.contact {
+
+    .fas, .far, .fa {
+        color: $redish;
+        font-size: 3rem;
+    }
+    .header {
+        h2 {
+            @include sectiontitle;
+        }
+        p {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .flex2 {
+        margin: 0 auto; 
+
+        @include breakpoint(tablet) {
+            width: 80%;
+        }
+
+        @include breakpoint(tablet2) {
+            display: flex;
+            width: 90%;
+            flex: 1;
+            margin: 0 auto;
+            article {
+                width: 40%;
+            }
+        }
+
+        article {
+            @include breakpoint(tablet2);
+            
+        }
+    }
+
+
+    article {
+
+        margin: 2rem auto 2rem auto;
+
+        
+        
+        @include card;
+
+        h3 {
+            @include cardHeader;
+        }
+
+        p {
+            @include cardParagraph;
+        }
+    }
+}
+
+
+/*********************** FOOTER ********************************/
+
+footer {
+    
+    background: $offblack;
+    
+    
+
+    .flex2 {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex: 1;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .copy, .webmaster {
+        margin: 1rem auto 1rem auto;
+        background: $offwhite;
+        display: inline-block;
+        padding: 15px;
+        border-radius: 10px;
+
+        @include breakpoint(tablet) {
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+
+        }
+    }
+}
+
+@media all and (orientation: landscape) and (max-width: 840px) {
+    header {
+        height: 140%;
+    }
+
+    .herobg {
+        height: 150vh;
+    }
+}
