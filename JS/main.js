@@ -12,10 +12,10 @@ function headerShadow() {
 
 function removeShadow() {
     let header = document.querySelector('nav');
-    
+
 }
 
-window.addEventListener('scroll', debounce(headerShadow));
+window.addEventListener('scroll', headerShadow);
 
 let nav = document.querySelector('.menu');
 
@@ -62,4 +62,16 @@ li.forEach(i => i.addEventListener('click', closeNav))
       };
     }
 
-  
+  // Load photos on mobile devices ///
+  let mobile = document.querySelector('#loadMobile');
+  function loadMobile() {
+      
+     let photos = document.querySelector('.photos2');
+     
+     photos.classList.toggle('photosOpen');
+     
+
+  }
+
+
+  mobile.addEventListener('click', loadMobile);

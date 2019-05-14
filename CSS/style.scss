@@ -10,6 +10,26 @@
     margin: 0 auto;
 }
 
+@mixin card {
+    border-radius: 10px;
+    background: $white;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .3);
+    margin: 2rem auto 2rem auto;
+}
+
+@mixin cardHeader {
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    margin: 0;
+}
+
+@mixin cardParagraph {
+    padding: 0 15px 15px 15px;
+    margin: 0;
+}
+
 @mixin titleparagraph {
     padding: 0 10px 35px 10px;
     margin: 0 auto;
@@ -61,7 +81,7 @@ $herob: #376dd1;
 
 $offwhite: #f4f4f4;
 $offblack: #242424;
-
+$white2: #fdfdfd;
 /**pal ***/
 $red: #3DBDCC;
 $white: #fefdfa;
@@ -211,7 +231,7 @@ nav {
 header {
     padding-top: 0;
     width: 80%;
-    height: 90vh;
+    height: 91vh;
     margin: 0 auto;
 
     .apartment {
@@ -301,6 +321,8 @@ header {
 /*********** Location ****************************/////////////////////////
 
 .location {
+
+    margin-top: 1rem;
     
     .flex2 {
 
@@ -326,10 +348,13 @@ header {
     }
 
     .where {
-        position: relative;
-        background: transparent;
+        
+        
 
         h2 {
+            .fa-map-marker-alt {
+                color: $redish;
+            }
             @include sectiontitle;
         }
 
@@ -368,11 +393,15 @@ header {
         
         h3 {
             text-align: center;
-            color: $red2;
+        
             font-size: 1.5rem;
             padding-top: 1.5rem;
             margin-top: 0;
             margin-bottom: .5rem;
+
+            .fas {
+                color: $redish;
+            }
         }
         p {
             margin-top: 0;
@@ -408,12 +437,15 @@ header {
 }
 
 
+
+
 /***************** DAILY LIFE ******************/
 
 .dailyLife {
 
     background: linear-gradient(#f9f9f9, #f2f2f2);
     margin-top: 3rem;
+    padding-bottom: 3rem;
 
     .living {
     
@@ -503,6 +535,8 @@ header {
 .photos {
     margin: 0 auto;
     text-align: center;
+    background: $white2;
+    padding-bottom: 3rem;
 
     
 
@@ -548,17 +582,21 @@ header {
    Attribution-ShareAlike 4.0 license and is available on
    https://github.com/TheLastProject/CSSBox. You are not required to add
    additional credit to your website, just leave the above text in this file */
-   #photos > div {
+   .photos2 > div {
     
     flex: 1 1 200px;
 
   }
 
-  #photos {
-    display: flex;
+  .photos2 {
+    display: none;
     
     flex: 1;
     flex-wrap: wrap;
+
+    @include breakpoint(tablet) {
+        display: flex;
+    }
 
   }
 
@@ -648,6 +686,10 @@ header {
   span.cssbox_full {
     cursor: initial;
   }
+
+  .photosOpen {
+    display: flex;
+}
   /* This is the end of CSSBox */
   
 
@@ -656,8 +698,45 @@ header {
 
 
 .price {
+    background: $offwhite;
+
+    .flex2 {
+
+        margin: 0 auto;
+
+        article {
+            @include card;
+        }
+
+        @include breakpoint(tablet) {
+            width: 80%;
+            
+            article {
+                width: 40%;
+            }
+            
+        }
+
+        @include breakpoint(tablet2) {
+            display: flex;
+            width: 90%;
+            flex: 1;
+            margin: 0 auto;
+
+        }
+    }
 
     h2 {
         @include sectiontitle;
     }
+
+    h3 {
+        @include cardHeader;
+    }
+
+    p {
+        @include cardParagraph;
+    }
 }
+
+

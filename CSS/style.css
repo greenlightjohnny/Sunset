@@ -160,7 +160,7 @@ nav a {
 header {
   padding-top: 0;
   width: 80%;
-  height: 90vh;
+  height: 91vh;
   margin: 0 auto;
 }
 
@@ -258,6 +258,10 @@ header p {
 }
 
 /*********** Location ****************************/
+.location {
+  margin-top: 1rem;
+}
+
 @media (min-width: 847px) {
   .location .flex2 {
     display: -webkit-box;
@@ -285,11 +289,6 @@ header p {
   }
 }
 
-.location .where {
-  position: relative;
-  background: transparent;
-}
-
 .location .where h2 {
   text-align: center;
   font-size: 2.5rem;
@@ -297,6 +296,10 @@ header p {
   padding-top: 3rem;
   text-transform: uppercase;
   margin: 0 auto;
+}
+
+.location .where h2 .fa-map-marker-alt {
+  color: #eeea0e;
 }
 
 @media (min-width: 847px) {
@@ -331,11 +334,14 @@ aside {
 
 aside h3 {
   text-align: center;
-  color: #D55534;
   font-size: 1.5rem;
   padding-top: 1.5rem;
   margin-top: 0;
   margin-bottom: .5rem;
+}
+
+aside h3 .fas {
+  color: #eeea0e;
 }
 
 aside p {
@@ -376,6 +382,7 @@ aside p {
   background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#f2f2f2));
   background: linear-gradient(#f9f9f9, #f2f2f2);
   margin-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .dailyLife article h2 {
@@ -467,6 +474,8 @@ aside p {
 .photos {
   margin: 0 auto;
   text-align: center;
+  background: #fdfdfd;
+  padding-bottom: 3rem;
 }
 
 .photos .hidefull {
@@ -511,21 +520,27 @@ aside p {
    Attribution-ShareAlike 4.0 license and is available on
    https://github.com/TheLastProject/CSSBox. You are not required to add
    additional credit to your website, just leave the above text in this file */
-#photos > div {
+.photos2 > div {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 200px;
           flex: 1 1 200px;
 }
 
-#photos {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.photos2 {
+  display: none;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+@media (min-width: 499px) {
+  .photos2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .cssbox_thumb {
@@ -617,8 +632,52 @@ span.cssbox_full {
   cursor: initial;
 }
 
+.photosOpen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 /* This is the end of CSSBox */
 /***************** PRICES ********************/
+.price {
+  background: #f4f4f4;
+}
+
+.price .flex2 {
+  margin: 0 auto;
+}
+
+.price .flex2 article {
+  border-radius: 10px;
+  background: #fefdfa;
+  -webkit-box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+  margin: 2rem auto 2rem auto;
+}
+
+@media (min-width: 499px) {
+  .price .flex2 {
+    width: 80%;
+  }
+  .price .flex2 article {
+    width: 40%;
+  }
+}
+
+@media (min-width: 847px) {
+  .price .flex2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 90%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin: 0 auto;
+  }
+}
+
 .price h2 {
   text-align: center;
   font-size: 2.5rem;
@@ -626,5 +685,18 @@ span.cssbox_full {
   padding-top: 3rem;
   text-transform: uppercase;
   margin: 0 auto;
+}
+
+.price h3 {
+  font-size: 1.5rem;
+  text-align: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  margin: 0;
+}
+
+.price p {
+  padding: 0 15px 15px 15px;
+  margin: 0;
 }
 /*# sourceMappingURL=style.css.map */
